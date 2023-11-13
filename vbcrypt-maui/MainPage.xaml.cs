@@ -49,7 +49,7 @@ public partial class MainPage : ContentPage
                 byte[] originalNameBytes = doObfuscate ? Encoding.UTF8.GetBytes(inputFileResult.FileName) : Array.Empty<byte>();
                 Stream outputFile = File.OpenWrite(Path.Combine(outputDirectoryResult.Folder.Path, outFileName));
                 cryptHandler.Encrypt(inputFile, originalNameBytes, outputFile);
-                OutputLogBox.Text += $"{inputFileResult.FileName} was encrypted to {outFileName}\n";
+                OutputLogBox.Text += $"\n{inputFileResult.FileName} was encrypted to {outFileName}";
             }
         }
         catch (Exception ex)
@@ -70,7 +70,7 @@ public partial class MainPage : ContentPage
             {
                 Stream inputFile = await inputFileResult.OpenReadAsync();
                 var outFileName = cryptHandler.Decrypt(inputFile, inputFileResult.FileName, outputDirectoryResult.Folder.Path);
-                OutputLogBox.Text += $"{inputFileResult.FileName} was decrypted to {outFileName}\n";
+                OutputLogBox.Text += $"\n{inputFileResult.FileName} was decrypted to {outFileName}";
             }
         }
         catch (Exception ex)

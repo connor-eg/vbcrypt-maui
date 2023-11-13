@@ -23,7 +23,7 @@
                 it will wrap and render correctly. -->
             <Grid  
                 HorizontalOptions="Fill"
-                ColumnDefinitions="1*,10*"
+                ColumnDefinitions="30,10*"
                 RowDefinitions="1*,1*"
                 Padding="0">
                 <!-- I do not think that this feature is useful for a GUI application.
@@ -78,9 +78,9 @@
                     Text="Decrypt"
                     Grid.Column="1"/>
             </Grid>
-            <Label Text="When you want to encrypt or decrypt files, you will first be prompted for the files that you wish to operate on, then a directory to place the output files into. It is best to select an empty directory." />
+            <Label Text="After clicking a button, provide a list of files to operate on then a folder to save finished files to. It is best to choose an empty folder." />
             <Label x:Name="OutputLogBox"
-                   Text=""
+                   Text="Completed operations will appear here."
                    BackgroundColor="LightGray"/>
         </VerticalStackLayout>
     </ScrollView>
