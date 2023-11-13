@@ -4,17 +4,8 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:vbcrypt_maui"
-    Shell.FlyoutBehavior="{OnIdiom Desktop=Locked, Default=Flyout}">
+    Shell.FlyoutBehavior="Disabled">
 
-    <ShellContent Title="Encrypt"
-        ContentTemplate="{DataTemplate local:EncryptPage}" />
-    <ShellContent Title="Decrypt"
-        ContentTemplate="{DataTemplate local:DecryptPage}" />
-
-    <Shell.FlyoutFooter>
-        <VerticalStackLayout Padding="10">
-            <Label Text='Made by Connor "sus" Garcia'
-                   HorizontalOptions="Center"/>
-        </VerticalStackLayout>
-    </Shell.FlyoutFooter>
+    <ShellContent Title="vbcrypt"
+        ContentTemplate="{DataTemplate local:MainPage}" />
 </Shell>

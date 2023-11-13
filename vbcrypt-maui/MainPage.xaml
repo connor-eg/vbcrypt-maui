@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="vbcrypt_maui.MainPage"
+             Title="VB Crypt">
+    <ScrollView>
+        <VerticalStackLayout
+        Padding="8"
+        Margin="4">
+        
+            <Label 
+                Text="Let's get cryptic."
+                FontSize="Large"
+                FontAttributes="Bold"
+                VerticalOptions="Center" 
+                HorizontalOptions="Center" />
+
+            <Label 
+                Text="Options"
+                HorizontalOptions="Start" />
+            
+            <!-- I had to use a grid here so that if the text on the labels is too large for the screen, 
+                it will wrap and render correctly. -->
+            <Grid  
+                HorizontalOptions="Fill"
+                ColumnDefinitions="1*,10*"
+                RowDefinitions="1*,1*"
+                Padding="0">
+                <!-- I do not think that this feature is useful for a GUI application.
+                <CheckBox
+                    x:Name="Option_Delete"
+                    HorizontalOptions="Start"
+                    Grid.Column="0"
+                    Grid.Row="0"/>
+                <Label 
+                    Text="Delete original files after completing"
+                    VerticalOptions="Center"
+                    HorizontalOptions="Fill"
+                    LineBreakMode="WordWrap"
+                    Grid.Column="1"
+                    Grid.Row="0"/>-->
+                <CheckBox
+                    x:Name="Option_Obfuscate"
+                    HorizontalOptions="Start"
+                    Grid.Column="0"
+                    Grid.Row="1"/>
+                <Label 
+                    Text="Hide original files' names (for encryption only)"
+                    VerticalOptions="Center"
+                    HorizontalOptions="Fill"
+                    LineBreakMode="WordWrap"
+                    Grid.Column="1"
+                    Grid.Row="1"/>
+            </Grid>
+
+            <!-- The spell check/text prediction options are likely irrelevant because IsPassword
+                is set but I simply am not sure how it works internally. -->
+            <Entry x:Name="Entry_KeyField"
+                   IsTextPredictionEnabled="False"
+                   IsSpellCheckEnabled="False"
+                   IsPassword="True"
+                   ClearButtonVisibility="WhileEditing"
+                   Placeholder="Password to use for encryption/decryption"/>
+
+            <Grid
+                ColumnDefinitions="1*,1*"
+                Padding="4"
+                Margin="4"
+                ColumnSpacing="4">
+                <Button
+                    x:Name="Button_Encrypt"
+                    Clicked="Button_Encrypt_Clicked"
+                    Text="Encrypt"
+                    Grid.Column="0"/>
+                <Button
+                    x:Name="Button_Decrypt"
+                    Clicked="Button_Decrypt_Clicked"
+                    Text="Decrypt"
+                    Grid.Column="1"/>
+            </Grid>
+            <Label Text="When you want to encrypt or decrypt files, you will first be prompted for the files that you wish to operate on, then a directory to place the output files into. It is best to select an empty directory." />
+            <Label x:Name="OutputLogBox"
+                   Text=""
+                   BackgroundColor="LightGray"/>
+        </VerticalStackLayout>
+    </ScrollView>
+    
+</ContentPage>
