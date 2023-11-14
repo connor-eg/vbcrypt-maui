@@ -86,7 +86,7 @@ internal class CryptHandler : IDisposable
             outFileName = Encoding.UTF8.GetString(origNameBytes);
         }
         else
-            outFileName = hasVbcrExt ? $"{inputFileName[..^4]}" : $"{inputFileName}.decrypted";
+            outFileName = hasVbcrExt ? $"{inputFileName[..^5]}" : $"{inputFileName}.decrypted";
         using FileStream outStream = File.OpenWrite(Path.Combine(outputFolderPath, outFileName));
         // And we're off; we can decrypt data until EOF.
         cStream.CopyTo(outStream);
