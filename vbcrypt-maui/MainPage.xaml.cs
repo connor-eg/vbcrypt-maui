@@ -1,4 +1,3 @@
-using CommunityToolkit.Maui.Alerts;
 using CommunityToolkit.Maui.Storage;
 using Core;
 using System.Runtime.Versioning;
@@ -9,7 +8,7 @@ namespace vbcrypt_maui;
 
 [SupportedOSPlatform("Android26.0")] // needed to clean up some green squiggly lines
 [SupportedOSPlatform("iOS14.0")]
-[SupportedOSPlatform("MacCatalyst14.0")]
+[SupportedOSPlatform("MacCatalyst14.0")] // not even sure if this would support these lol
 [SupportedOSPlatform("Windows")]
 public partial class MainPage : ContentPage
 {
